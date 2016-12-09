@@ -11,14 +11,15 @@ The automated testing framework for project ZStack http://zstack.org
  * `git clone https://github.com/zstackorg/zstack-vyos`  
 
 #2. Manually build ZStack
- * make sure Java JDK and maven are installed.  
+ * make sure Java JDK and maven are installed. （yum -y install java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64）
  * `cd /home/zstack; wget -c http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.35/bin/apache-tomcat-7.0.35.zip`  
  * `cd /home/zstack/zstack`  
  * `mvn -DskipTests clean install` (The 1st time build will be a little bitter slow, since it need to download a lot of java libs)  
  * For Mainland developer, please download .m2 packages to /root/.m2/ manually from http://pan.baidu.com/s/1eQvUmWU, before build ZStack
 
 #3. Use woodpecker to build zstack all in one package
- * `cd /home/zstack/zstack-woodpecker/dailytest`  
+ * `cd /home/zstack/zstack-woodpecker/dailytest
+ * `export GOROOT=/usr/local/golang #/usr/lib/golang
  * `./zstest.py -b`  
 
 #4. Create local test configuration environment files
